@@ -124,6 +124,10 @@ cursor: grab;
       display: none;
     }
     .carousel img {
+  user-drag: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
       max-width: 200px;
       height: auto;
       object-fit: cover;
@@ -213,7 +217,7 @@ cursor: grab;
   color: #00ff99;
   text-shadow: 0 0 5px #00ff99;
   margin-top: 1.5rem;">
-  Launch in:<br><span id="timer">loading...</span>
+  Launch in:<br><span id="timer" style="display: block; margin-top: 0.5rem; font-size: 1.5rem; line-height: 1.6;">loading...</span>
 </div>
 </header>
 
