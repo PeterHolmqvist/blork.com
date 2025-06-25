@@ -111,28 +111,28 @@ cursor: grab;
       width: 100%;
     }
     .carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  max-width: 640px;
+  margin: 0 auto;
   cursor: grab;
-      display: flex;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      width: 100%;
-      max-width: 100%;
-      border: 2px solid #00ff99;
-      scrollbar-width: none;
-    }
+}
     .carousel::-webkit-scrollbar {
       display: none;
     }
     .carousel img {
+  max-width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-right: 2px solid #00ff99;
+  margin-right: 10px;
   user-drag: none;
   user-select: none;
   -webkit-user-drag: none;
   -webkit-user-select: none;
-      max-width: 200px;
-      height: auto;
-      object-fit: cover;
-      border-right: 2px solid #00ff99;
-    }
+}
     .carousel-btn {
       font-size: 2rem;
       background: none;
