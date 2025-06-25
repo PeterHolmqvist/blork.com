@@ -111,6 +111,7 @@ cursor: grab;
       width: 100%;
     }
     .carousel {
+  cursor: grab;
       display: flex;
       overflow-x: auto;
       scroll-behavior: smooth;
@@ -141,6 +142,10 @@ cursor: grab;
     font-size: 2rem;
   }
 }
+.carousel.active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
 </style>
   <script>
     function copyAddress() {
@@ -149,7 +154,34 @@ cursor: grab;
         alert("Contract address copied to clipboard: " + contractAddress);
       });
     }
-  </script>
+  // Drag-to-scroll on desktop
+  const memeCarousel = document.getElementById('memeCarousel');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  memeCarousel.addEventListener('mousedown', (e) => {
+    isDown = true;
+    memeCarousel.classList.add('active');
+    startX = e.pageX - memeCarousel.offsetLeft;
+    scrollLeft = memeCarousel.scrollLeft;
+  });
+  memeCarousel.addEventListener('mouseleave', () => {
+    isDown = false;
+    memeCarousel.classList.remove('active');
+  });
+  memeCarousel.addEventListener('mouseup', () => {
+    isDown = false;
+    memeCarousel.classList.remove('active');
+  });
+  memeCarousel.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - memeCarousel.offsetLeft;
+    const walk = (x - startX) * 2; // sensitivity
+    memeCarousel.scrollLeft = scrollLeft - walk;
+  });
+</script>
 </head>
 <body>
   <header>
