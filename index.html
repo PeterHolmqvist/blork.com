@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>$BLÖRK</title>
+  <link rel="icon" type="image/png" href="blork-face.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Courier New', monospace;
+      background: url('glitchy-retro-bg.gif') repeat;
+      background-size: 512px 512px;
+      background-color: #0a0a0a;
+      color: #00ff99;
+      text-shadow: 1px 1px 0 #000;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      width: 100%;
+    }
+    h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  word-break: break-word;
+  white-space: normal;
+}
+    .blork-face {
+      width: 180px;
+      image-rendering: pixelated;
+      max-width: 100%;
+    }
+    .section {
+      max-width: 90%;
+      margin: 2rem auto;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #0f0;
+      width: 100%;
+    }
+    .section h2 {
+      font-size: 2rem;
+      font-family: 'Press Start 2P', cursive;
+      color: #ff00aa;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .section h3 {
+      font-size: 1.2rem;
+      font-family: 'Press Start 2P', cursive;
+      color: #00ffff;
+      margin-top: 1.5rem;
+    }
+    .btn {
+      display: inline-block;
+      margin: 1rem;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      background: #00ff99;
+      color: black;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 5px;
+      font-family: 'Press Start 2P', cursive;
+      font-weight: bold;
+      box-shadow: 0 0 12px #00ff99;
+      max-width: 90vw;
+      white-space: nowrap;
+    }
+    .btn-copy {
+      background: #ff00aa;
+      box-shadow: 0 0 12px #ff00aa;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+    .socials i {
+      font-size: 1.5rem;
+      margin: 0 0.5rem;
+      color: #00ff99;
+    }
+    .socials a {
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .carousel-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      overflow-x: auto;
+      max-width: 100vw;
+      width: 100%;
+    }
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      width: 100%;
+      max-width: 100%;
+      border: 2px solid #00ff99;
+      scrollbar-width: none;
+    }
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+    .carousel img {
+      max-width: 200px;
+      height: auto;
+      object-fit: cover;
+      border-right: 2px solid #00ff99;
+    }
+    .carousel-btn {
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: #00ff99;
+      cursor: pointer;
+      user-select: none;
+    }
+  @media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+</style>
+  <script>
+    function copyAddress() {
+      const contractAddress = "CYANXouNZ9jGkw2PvWJ2Q5AnKNeoUFQD1JhNdE2Ypump";
+      navigator.clipboard.writeText(contractAddress).then(() => {
+        alert("Contract address copied to clipboard: " + contractAddress);
+      });
+    }
+  </script>
+</head>
+<body>
+  <header>
+  <img src="blork-face.png" alt="BLÖRK" class="blork-face" />
+  <h1 style="font-family: 'Press Start 2P', cursive; color: #00ff99;">$BLÖRK</h1>
+  <div style="margin-top: 1rem;">
+    <p style="
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  color: #00ff99;
+  border: 1px solid #00ff99;
+  padding: 0.5rem 1rem;
+  display: block;
+  max-width: 90vw;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 0 8px #00ff99;
+  box-sizing: border-box;">
+  contract address: coming soon...
+</p>
+  </div>
+  <div style="margin-top: 1rem;">
+  <a href="https://pump.fun/coin/CYANXouNZ9jGkw2PvWJ2Q5AnKNeoUFQD1JhNdE2Ypump?include-nsfw=true" target="_blank" class="btn">BUY NOW</a>
+  <button class="btn btn-copy" onclick="copyAddress()">COPY CONTRACT</button>
+</div>
+<div id="launch-timer" style="
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  color: #00ff99;
+  text-shadow: 0 0 5px #00ff99;
+  margin-top: 1.5rem;">
+  Launch in: <span id="timer">loading...</span>
+</div>
+</header>
+
+  <div class="section">
+    <h2>What is $BLÖRK?</h2>
+    <p>
+      Nobody knows. Everyone wants it. $BLÖRK is not a meme coin. It's a moment. 
+      It's a frequency. It's what you feel right before the liquidity hits.
+    </p>
+  </div>
+
+  <div class="section">
+  <h2>Meme Carousel</h2>
+  <div class="carousel-container">
+  <div class="carousel" id="memeCarousel">
+    <img src="meme1.png" alt="Blörk meme" />
+    <img src="meme2.png" alt="Blörk meme" />
+    <img src="meme3.png" alt="Blörk meme" />
+    <img src="meme4.png" alt="Blörk meme" />
+    <img src="meme5.png" alt="Blörk meme" />
+    <img src="meme6.png" alt="Blörk meme" />
+    <img src="meme7.png" alt="Blörk meme" />
+    <img src="meme8.png" alt="Blörk meme" />
+  </div>
+</div>
+</div>
+
+<style>
+  .carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    overflow: hidden;
+  }
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    max-width: 600px;
+    border: 2px solid #00ff99;
+    scrollbar-width: none; /* Firefox */
+  }
+  .carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+  .carousel img {
+    max-width: 200px;
+    height: auto;
+    object-fit: cover;
+    border-right: 2px solid #00ff99;
+  }
+  .carousel-btn {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #00ff99;
+    cursor: pointer;
+    user-select: none;
+  }
+</style>
+
+<script>
+  function scrollCarousel(direction) {
+    const carousel = document.getElementById('memeCarousel');
+    const items = carousel.querySelectorAll('img');
+    const itemWidth = items[0].offsetWidth + 2; // width + border
+    const visibleWidth = carousel.offsetWidth;
+    const scrollWidth = carousel.scrollWidth;
+
+    // Calculate new scroll position
+    let newScrollLeft = carousel.scrollLeft + direction * itemWidth;
+
+    // Loop back to start or end
+    if (newScrollLeft >= scrollWidth - visibleWidth) {
+      newScrollLeft = 0;
+    } else if (newScrollLeft < 0) {
+      newScrollLeft = scrollWidth - visibleWidth;
+    }
+
+    carousel.scrollTo({ left: newScrollLeft, behavior: 'smooth' });
+  }
+</script>
+<script>
+  const timerEl = document.getElementById('timer');
+  const launchDate = new Date("2025-06-28T16:00:00Z"); // Update as needed
+
+  function updateTimer() {
+    const now = new Date();
+    const diff = launchDate - now;
+
+    if (diff <= 0) {
+      timerEl.textContent = "LAUNCHED!";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    timerEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  setInterval(updateTimer, 1000);
+  updateTimer();
+  const confettiColors = ['#00ff99', '#ff00aa', '#00ffff', '#ffff00'];
+
+  function launchConfetti() {
+    const canvas = document.createElement('canvas');
+    canvas.id = 'confetti-canvas';
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '9999';
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    const pieces = Array.from({ length: 150 }, () => ({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      r: Math.random() * 6 + 4,
+      d: Math.random() * 50 + 30,
+      color: confettiColors[Math.floor(Math.random() * confettiColors.length)],
+      tilt: Math.random() * 10 - 10
+    }));
+
+    function draw() {
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      pieces.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+      });
+      update();
+    }
+
+    function update() {
+      pieces.forEach(p => {
+        p.y += Math.cos(p.d) + 1;
+        p.x += Math.sin(p.d);
+      });
+    }
+
+    function loop() {
+      draw();
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+    setTimeout(() => document.body.removeChild(canvas), 6000);
+  }
+
+  function updateTimer() {
+    const now = new Date();
+    const diff = launchDate - now;
+
+    if (diff <= 0) {
+      timerEl.textContent = "LAUNCHED!";
+      launchConfetti();
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    timerEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  setInterval(updateTimer, 1000);
+  updateTimer();
+</script>
+</div>
+
+  <div class="section">
+    <h2>Roadmap</h2>
+    <h3>Phase 1: Birth of the Blörkening</h3>
+    <ul>
+      <li>Fair launch on Pump.fun</li>
+      <li>DEX listing at $25K market cap</li>
+      <li>Bond the token to DEX</li>
+    </ul>
+    <h3>Phase 2: Blörk Awakens</h3>
+    <ul>
+      <li>KOL activation</li>
+      <li>Community competitions</li>
+      <li>Shill and grow community</li>
+    </ul>
+    <h3>Phase 3: Full Blörkification</h3>
+    <ul>
+      <li>$10M+ market cap</li>
+      <li>Blörk NFTs</li>
+      <li>Blörk Swap</li>
+      <li>Blörk Merch</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>
+      <div class="socials">
+        <a href="https://t.me/+4yIJkQ-CchBjNzY8" target="_blank"><i class="fab fa-telegram"></i></a>
+        <a href="https://x.com/blorksolana" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="mailto:contact@blork.xyz"><i class="fas fa-envelope"></i></a>
+      </div>
+    </p>
+  </footer>
+</body>
+</html>
+
+
